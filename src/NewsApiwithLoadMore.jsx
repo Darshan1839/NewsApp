@@ -64,7 +64,7 @@ export const NewsApiWithLoadMore = () => {
 
             <section className="content">
                 {
-                    apiData.slice(0, articlesToShow).map((data) => (
+                    apiData.map((data) => (
                         data.urlToImage && (
                             <div className="data" key={data.url}>
                                 <h4 className="title">{data.title}</h4>
