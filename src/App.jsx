@@ -1,6 +1,7 @@
 import { useState } from 'react'
+import { NewsApiWithLoadMore } from './NewsAPiwithFilters'
 // import { NewsApi } from './NEwsAPi'
-import {NewsApiWithLoadMore} from "./NewsApiwithLoadMore.jsx"
+// import {NewsApiWithLoadMore} from "./NewsApiwithLoadMore.jsx"
 
 
 function App() {
