@@ -87,36 +87,39 @@ export const NewsApiWithLoadMore = () => {
   return (
     <div className={`min-h-screen bg-gray-100 dark:bg-gray-900 font-sans transition-colors duration-300`}>
       {/* Header */}
-      <header className="bg-white dark:bg-gray-800 dark:text-white shadow py-6">
-        <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center">
-          <h1 className="text-3xl font-bold text-indigo-700 mb-4 sm:mb-0">📰 TheNews</h1>
-          
-          {/* Search Box */}
-          <form onSubmit={searchNewsHandler} className="flex w-full sm:w-auto gap-2">
-            <input
-              type="text"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search news (e.g., Football, Economy)"
-              className="w-full sm:w-72 px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:bg-gray-800 dark:text-white"
-            />
-            <button
-              type="submit"
-              className="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-md transition"
-            >
-              <FontAwesomeIcon icon={faMagnifyingGlass} />
-            </button>
-          </form>
-
-          {/* Dark Mode Toggle */}
-          <button
+     <header className="bg-white dark:bg-gray-800 dark:text-white shadow py-6">
+  <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+    
+    {/* Logo */}
+    <h1 className="text-3xl font-bold text-indigo-700">📰 TheNews</h1>
+    
+    {/* Search Box */}
+    <form onSubmit={searchNewsHandler} className="flex w-full sm:w-auto gap-2">
+      <input
+        type="text"
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)}
+        placeholder="Search news (e.g., Football, Economy)"
+        className="w-full sm:w-72 px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:bg-gray-800 dark:text-white"
+      />
+      <button
+        type="submit"
+        className="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-md transition"
+      >
+        <FontAwesomeIcon icon={faMagnifyingGlass} />
+      </button>
+    </form>
+    
+    {/* Dark Mode Toggle */}
+    <button
       onClick={() => setDarkMode(!darkMode)}
       className="p-2 rounded bg-gray-200 dark:bg-gray-700 text-black dark:text-white"
     >
-      {darkMode ? <FontAwesomeIcon icon={faSun} size="lg" /> : <FontAwesomeIcon icon={ faMoon} size="lg" /> }
+      {darkMode ? <FontAwesomeIcon icon={faSun} size="lg" /> : <FontAwesomeIcon icon={faMoon} size="lg" /> }
     </button>
-        </div>
-      </header>
+
+  </div>
+</header>
 
       {/* Filter Buttons */}
       <div className="max-w-6xl mx-auto px-4 py-4 flex gap-4 flex-wrap justify-center">
