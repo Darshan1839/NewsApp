@@ -13,7 +13,8 @@ export const NewsApiWithLoadMore = () => {
     document.documentElement.hasAttribute('data-theme') && 
     document.documentElement.getAttribute('data-theme') === 'dark'
   );
-  const api_key = "dcada234e81447a29180b187c98ce73c";
+const backendUrl = import.meta.env.VITE_BACKEND_URL;
+  
 
   // Function to fetch news based on a query or category
   const fetchNews = async (query) => {
@@ -24,8 +25,8 @@ export const NewsApiWithLoadMore = () => {
 
     try {
       setLoading(true);
-      const url = `https://newsapi.org/v2/everything?q=${query}&apiKey=${api_key}`;
-      const response = await fetch(url);
+      const response = await fetch(`${backendUrl}?q=${encodeURIComponent(query)}`);
+
 
       if (!response.ok) {
         throw new Error("Failed to fetch data from the API.");
